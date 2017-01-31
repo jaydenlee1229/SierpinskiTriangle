@@ -1,10 +1,20 @@
+int y = 0;
 public void setup()
 {
 	size(600, 600);
 }
 public void draw()
 {
-	background(50, 50, 90);
+	background(0, 0, 255);
+	noStroke();
+	fill(255, 0, 0);
+	rect(0, y, 600, 600);
+	y += 10;
+	if(y > 600)
+	{
+		y = -600;
+	}
+	stroke(1);
 	fill(255);
 	sierpinski1(0, 600, 600);
 	sierpinski2(0, 0, 600);
@@ -24,9 +34,9 @@ public void sierpinski1(int x, int y, int len)
 		vertex(x + len * 1.381966, y);
 		vertex(x + len * 2.38, y);
 		vertex(x + len * 1.457, y + len * 0.374);
+		vertex(x + len * 2.118, y + len * 1.5388);
 		vertex(x + len * 1.19, y + len * 0.698);
 		vertex(x + len * 0.18488, y + len * 0.89);
-		vertex(x + len * 2.118, y + len * 1.5388);
 		vertex(x + len * 0.922, y + len * 0.374);
  		endShape();
  	}
@@ -48,9 +58,9 @@ public void sierpinski2(int x, int y, int len)
 		vertex(x + len * 1.381966, y);
 		vertex(x + len * 2.38, y);
 		vertex(x + len * 1.457, y + len * 0.374);
+		vertex(x + len * 2.118, y + len * 1.5388);
 		vertex(x + len * 1.19, y + len * 0.698);
 		vertex(x + len * 0.18488, y + len * 0.89);
-		vertex(x + len * 2.118, y + len * 1.5388);
 		vertex(x + len * 0.922, y + len * 0.374);
  		endShape();
  	}
